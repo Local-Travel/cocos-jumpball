@@ -10,6 +10,9 @@ export class GameManager extends Component {
 
     @property(Node)
     platRoot: Node = null
+    
+    @property(Node)
+    floatBallRoot: Node = null
 
 
     private _platIndex = 0
@@ -64,7 +67,7 @@ export class GameManager extends Component {
     private _removePlat() {
         if (this._platIndex > 15) {
             for(let i = 0; i < 10; i++) {
-                this.platRoot.children[0].removeFromParent()
+                this.platRoot.children[0].destroy()
             }
             this._platIndex -= 10
         }
